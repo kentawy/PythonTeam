@@ -27,18 +27,15 @@ print("Позиція першого входження слова 'мов':", f
 text_split = text.split()
 print("Текст, розділений на слова:", text_split)
 
-# Функції Петрушко Ярослав: text[::-1], if word in text, isalpha()
-# Зворотний порядок тексту
-reversed_text = text[::-1]
-print("Текст у зворотному порядку:", reversed_text)
+# Функції Петрушко Ярослав: join(), swapcase(), isalpha()
+# Зворотний порядок слів у тексті
+reversed_words = ' '.join(text_split[::-1])
+print("Текст зі зворотнім порядком слів:", reversed_words)
 
-# Перевірка текст на наявність слова "Пайтон"
-word_to_check = "Пайтон"
-if word_to_check in text:
-    print(f"Слово '{word_to_check}' є в тексті.")
-else:
-    print(f"Слова '{word_to_check}' немає в тексті.")
+# Зміна символів нижнього регістру на верхній та навпаки
+swapped_text=text.swapcase()
+print("Текст зі зміненим регістром:", swapped_text)
 
-# Перевіряємо чи складається рядок лише з букв
+# Перевіряємо, чи складається рядок тільки з букв
 is_alpha = text_replaced.isalpha()
-print("Складається лише з букв:", is_alpha)
+print("Чи складається текст лише з букв:", is_alpha)
