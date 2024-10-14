@@ -12,3 +12,17 @@ print("Текст у верхньому регістрі:", text_upper)
 # Рахуємо кількість входжень слова 'мова'
 language_count = text_lower.count("мова")
 print("Кількість входжень слова 'мова':", language_count)
+
+# Функції Рубан Богдан: replace(), find(), split()
+
+# Замінимо слово 'Пайтон' на 'Python'
+text_replaced = text.replace("Пайтон", "Python")
+print("Текст після заміни:", text_replaced)
+
+# Знайдемо позицію першого входження слова 'мов'
+first_occurrence = text.find("мов")
+print("Позиція першого входження слова 'мов':", first_occurrence)
+
+# Розділимо текст на список слів
+text_split = text.split()
+print("Текст, розділений на слова:", text_split)
