@@ -64,6 +64,23 @@ def remove_student_prompt():
     full_name = input("Введіть ПІБ студента, якого потрібно видалити: ")
     remove_student(full_name)
 
+# Петрушко Ярослав, додавання функції сортування - sort_students_by_average_grade, редагування інформації про себе
+# Функція для сортування студентів за середнім балом
+def sort_students_by_average_grade():
+    """
+    Сортує студентів за середнім балом.
+    """
+    if not student_performance:
+        print("Список студентів порожній.")
+        return
+
+    # Обчислюємо середній бал для кожного студента і додаємо до словника
+    sorted_students = sorted(student_performance.items(), key=lambda x: sum(x[1]['subjects_grades'].values()) / len(x[1]['subjects_grades']), reverse=True)
+
+    print("Список студентів за середнім балом:")
+    for name, details in sorted_students:
+        avg_grade = sum(details['subjects_grades'].values()) / len(details['subjects_grades'])
+        print(f"Студент: {name}, Середній бал: {avg_grade:.2f}")
 
 # Функція для обробки вибору користувача
 def handle_action(action):
@@ -76,14 +93,15 @@ def handle_action(action):
     actions = {
         "add": add_student_prompt,
         "display": display_students,
-        "remove": remove_student_prompt
+        "remove": remove_student_prompt,
+        "sort": sort_students_by_average_grade
     }
 
     # Виконуємо функцію, якщо вона існує у словнику
     if action in actions:
         actions[action]()
     else:
-        print("Невідома команда! Доступні команди: 'add', 'display', 'remove'.")
+        print("Невідома команда! Доступні команди: 'add', 'display', 'remove', 'sort'.")
 
 
 # Функція для взаємодії з користувачем і додавання студента через запити
@@ -109,14 +127,14 @@ def add_student_prompt():
 
 # Додавання кількох студентів для тестування
 add_student('КН-37-4', 'Дмитренко Богдан', 2, {'Чисельні методи': 90, 'ММДО': 85, 'Algorithms and Data Structures': 95})
-add_student('КН-37-4', 'Петрушко Ярослав', 3, {'Математика': 75, 'Фізика': 80, 'Інформатика': 88})
+aadd_student('КН-37-4', 'Петрушко Ярослав', 2, {'ООП': 90, 'Системне програмування': 90, 'Архітектура копм\'ютерів': 95})
 add_student('КН-37-4', 'Рубан Богдан', 2, {'Чисельні методи': 90, 'ММДО': 85, 'Algorithms and Data Structures': 95})
 add_student('КН-37-4', 'Гаценко Максим', 2, {'Чисельні методи': 90, 'ММДО': 85, 'Algorithms and Data Structures': 95})
-add_student('КН-37-4', 'Лукянченко Сергій', 2, {'Чисельні методи': 90, 'ММДО': 85, 'Algorithms and Data Structures': 95})
+add_student('КН-37-4', 'Лук\'янченко Сергій', 2, {'Чисельні методи': 90, 'ММДО': 85, 'Algorithms and Data Structures': 95})
 
 # Основний цикл програми
 while True:
-    print("\nКоманди: 'add' - додати студента, 'display' - показати список студентів, 'remove' - видалити студента, 'exit' - вихід")
+    print("\nКоманди: 'add' - додати студента, 'display' - показати список студентів, 'remove' - видалити студента, 'sort' - відсортувати студентів за середніми оцінками, 'exit' - вихід")
     action = input("Введіть команду: ").strip().lower()
     if action == "exit":
         print("Програма завершена.")
