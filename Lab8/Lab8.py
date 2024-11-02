@@ -82,6 +82,8 @@ def sort_students_by_average_grade():
         avg_grade = sum(details['subjects_grades'].values()) / len(details['subjects_grades'])
         print(f"Студент: {name}, Середній бал: {avg_grade:.2f}")
 
+# Завдання наступному студенту - створення функції для пошуку студента за прізвищем
+
 # Функція для обробки вибору користувача
 def handle_action(action):
     """
@@ -127,7 +129,7 @@ def add_student_prompt():
 
 # Додавання кількох студентів для тестування
 add_student('КН-37-4', 'Дмитренко Богдан', 2, {'Чисельні методи': 90, 'ММДО': 85, 'Algorithms and Data Structures': 95})
-aadd_student('КН-37-4', 'Петрушко Ярослав', 2, {'ООП': 90, 'Системне програмування': 90, 'Архітектура копм\'ютерів': 95})
+add_student('КН-37-4', 'Петрушко Ярослав', 2, {'ООП': 90, 'Системне програмування': 90, 'Архітектура копм\'ютерів': 95})
 add_student('КН-37-4', 'Рубан Богдан', 2, {'Чисельні методи': 90, 'ММДО': 85, 'Algorithms and Data Structures': 95})
 add_student('КН-37-4', 'Гаценко Максим', 2, {'Чисельні методи': 90, 'ММДО': 85, 'Algorithms and Data Structures': 95})
 add_student('КН-37-4', 'Лук\'янченко Сергій', 2, {'Чисельні методи': 90, 'ММДО': 85, 'Algorithms and Data Structures': 95})
