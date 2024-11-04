@@ -2,6 +2,7 @@ import csv
 import json
 import os
 
+# Дмитреноко Богдан create_csv, csv_to_json
 
 def create_csv(filename):
     """Створює .csv файл із початковими даними."""
@@ -49,11 +50,48 @@ def csv_to_json(csv_filename, json_filename):
     except Exception as e:
         print(f"Помилка при записі JSON файлу: {e}")
 
+# Рубан Богдан JSON_TO_CSV
+def json_to_csv(json_filename, csv_filename):
+    """Конвертує дані з .json у .csv файл, додаючи нові рядки."""
+    new_data = [
+        {"id": "4", "name": "Anastasia", "age": "22"},
+        {"id": "5", "name": "Ilya", "age": "21"},
+    ]
+
+    # Читання даних з JSON
+    try:
+        with open(json_filename, mode='r', encoding='utf-8') as json_file:
+            data = json.load(json_file)
+        print(f"Дані успішно зчитано з '{json_filename}'.")
+    except FileNotFoundError:
+        print(f"Файл '{json_filename}' не знайдено.")
+        return
+    except Exception as e:
+        print(f"Помилка при читанні JSON файлу: {e}")
+        return
+
+    # Запис даних у новий CSV файл
+    try:
+        with open(csv_filename, mode='w', newline='', encoding='utf-8') as csv_file:
+            fieldnames = ["id", "name", "age"]
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(data)  # Существующие дані з JSON
+            writer.writerows(new_data)  # Нові дані
+        print(f"CSV файл '{csv_filename}' успішно створено з новими рядками.")
+    except Exception as e:
+        print(f"Помилка при записі нового CSV файлу: {e}")
+
 
 # Шляхи до файлів
 csv_filename = "students.csv"
 json_filename = "students.json"
+new_csv_filename = "students_updated.csv"
 
 # Виконання функцій
 create_csv(csv_filename)
 csv_to_json(csv_filename, json_filename)
+json_to_csv(json_filename, new_csv_filename)
+
+
+
