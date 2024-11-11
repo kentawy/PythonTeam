@@ -39,3 +39,32 @@ print("Текст зі зміненим регістром:", swapped_text)
 # Перевіряємо, чи складається рядок тільки з букв
 is_alpha = text_replaced.isalpha()
 print("Чи складається текст лише з букв:", is_alpha)
+
+# Функції Гаценко Максим capitalize() title() strip()
+
+# capitalize() перетворює перший символ рядка на заголовний
+capitalized_text = text.capitalize()
+print("\033[1m"+"Перший символ першого рядка на заголовний, а всі інші ні\n"+ "\033[0m", capitalized_text)
+
+# title() перетворює перші букви кожного слова на великі літери.
+title_text = text.title()
+print("\033[1m"+"Текст де всі слова починаються з великої літери:\n"+ "\033[0m", title_text)
+
+#strip видаляє пробіли (або інші символи) з початку і кінця рядка.
+title_text=text.strip()
+print("\033[1m"+"Текст без пробілів на початку і кінці рядку:\n"+ "\033[0m", title_text) 
+
+# Функції Лук`янченко Сергій rfind() maketrans() translate() islower()
+
+# rfind знаходить індекс останнього входження підрядка
+last_index = text.rfind("мов")
+print("\033[1m" + "Останнє входження підрядка 'мов' на індексі:\n" + "\033[0m", last_index)
+
+# maketrans і translate замінюють символи за допомогою таблиці
+translation_table = str.maketrans("аеи", "АЕИ")
+translated_text = text.translate(translation_table)
+print("\033[1m" + "Текст після заміни символів (maketrans і translate):\n" + "\033[0m", translated_text)
+
+# islower перевіряє, чи всі символи в нижньому регістрі
+is_all_lower = text.islower()
+print("\033[1m" + "Чи всі символи в нижньому регістрі:\n" + "\033[0m", is_all_lower)
