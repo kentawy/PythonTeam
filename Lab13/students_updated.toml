@@ -1,0 +1,45 @@
+[[students]]
+id = "1"
+name = "Bogdan"
+age = "19"
+
+[[students]]
+id = "2"
+name = "Yaroslav"
+age = "20"
+
+[[students]]
+id = "3"
+name = "Maksim"
+age = "18"
+
+[[students]]
+id = "4"
+name = "Anastasia"
+age = "22"
+
+[[students]]
+id = "5"
+name = "Ilya"
+age = "21"
+
+[[students]]
+id = "6"
+name = "Roman"
+age = "20"
+
+[[students]]
+id = "7"
+name = "Denis"
+age = "19"
+
+[[students]]
+id = "8"
+name = "Igor"
+age = "22"
+
+[[students]]
+id = "9"
+name = "Anna"
+age = "16"
+
